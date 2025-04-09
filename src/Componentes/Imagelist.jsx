@@ -1,4 +1,4 @@
-import imageShow from "./ImageShow"
+import ImageShow from "./ImageShow"
 import './ImageList.css'
 
 
