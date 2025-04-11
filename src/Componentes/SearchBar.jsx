@@ -1,14 +1,14 @@
 import { useState } from "react"
-import './ShearchBar.css'
+import './SearchBar.css'
 
 
-const ShearchBar = ({onsubmit}) => {
+const SearchBar = ({onSubmit}) => {
      const [term, setTerm] = useState('')
 
      const handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('Necesito decirle al componente papa sobre los datos')
-        onsubmit(term)
+        onSubmit(term)
      }
      const handleChange = (event) => {
         setTerm(event.target.value)
@@ -17,7 +17,7 @@ const ShearchBar = ({onsubmit}) => {
 
     return (
         <div className="shearch-bar">
-        <form onsubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit}>
             <label>termino de la busqueda</label>
             <input onChange={handleChange} value={term} />
         </form>
@@ -25,4 +25,4 @@ const ShearchBar = ({onsubmit}) => {
     )
 }
 
-export default ShearchBar
+export default SearchBar

@@ -1,22 +1,22 @@
-import {useState} from "react"
-import ShearchBar from "./Componentes/ShearchBar"
+import { useState } from "react"
+import SearchBar from "./Componentes/SearchBar"
 import Imagelist from "./Componentes/Imagelist"
-import searchImages from "./api"
+import SearchImages from "./api"
 
 
 function App() {
   //searchImages('cars')
-  const [image, setImages] = useSate([])
+  const [images, setImages] = useState([])
 
   const handleSubmit = async(term) =>{
     console.log('usted esta buscnado con ' , term)
-    const result = await searchImages(term)
+    const result = await SearchImages(term)
     setImages(result)
   }
   return (
     <>
     <h1> Pictures App</h1>
-    <ShearchBar onsubmit={handleSubmit}/>
+    <SearchBar onSubmit={handleSubmit}/>
     <Imagelist images={images}/>
 
     </>
